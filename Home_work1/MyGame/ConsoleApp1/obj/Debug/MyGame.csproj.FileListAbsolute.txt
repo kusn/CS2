@@ -5,3 +5,10 @@ D:\Kudryashov\Учеба\CS2\Home_work1\MyGame\ConsoleApp1\bin\Debug\MyGame.exe
 D:\Kudryashov\Учеба\CS2\Home_work1\MyGame\ConsoleApp1\bin\Debug\MyGame.pdb
 D:\Kudryashov\Учеба\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.exe
 D:\Kudryashov\Учеба\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.pdb
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\bin\Debug\MyGame.exe.config
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\bin\Debug\MyGame.exe
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\bin\Debug\MyGame.pdb
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.csprojAssemblyReference.cache
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.csproj.CoreCompileInputs.cache
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.exe
+D:\Projects\CS2\Home_work1\MyGame\ConsoleApp1\obj\Debug\MyGame.pdb

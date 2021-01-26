@@ -23,7 +23,11 @@ namespace MyGame
         public override void Update()
         {
             Pos.X = Pos.X - Dir.X;
+            Pos.Y = Pos.Y - Dir.Y;
             if (Pos.X < 0) Pos.X = Game.Width + Size.Width;
+            if (Pos.X > Game.Width) Dir.X = -Dir.X;
+            if (Pos.Y < 0) Dir.Y = Game.Height + Size.Height;
+            if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
         }
     }
 }
