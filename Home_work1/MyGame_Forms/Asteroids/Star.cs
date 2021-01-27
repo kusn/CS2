@@ -10,7 +10,8 @@ namespace Asteroids
     class Star : BaseObject
     {        
         static Image Image { get; } = Image.FromFile("Images\\zvezdy.png");
-        
+        static Random rnd = new Random();
+
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
 
@@ -26,7 +27,7 @@ namespace Asteroids
             Pos = new Point(Pos.X - Dir.X, Pos.Y + Dir.Y);
             if (Pos.X < 0 || Pos.X > Game.Width)
                 //Dir = new Point(-Dir.X, Dir.Y);
-                Pos = new Point(Game.Width, Pos.Y + Dir.Y);
+                Pos = new Point(Game.Width, rnd.Next(0, Pos.Y + Dir.Y));
             if (Pos.Y < 0 || Pos.Y > Game.Height)
                 //Dir = new Point(Dir.X, -Dir.Y);
                 Pos = new Point(Pos.X - Dir.X, Game.Height);

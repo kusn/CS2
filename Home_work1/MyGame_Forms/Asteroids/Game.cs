@@ -23,7 +23,7 @@ namespace Asteroids
 
         static public BaseObject[] objs;
 
-        static Timer timer = new Timer();
+        static Timer timer;
         
         static Random rnd = new Random();
 
@@ -36,6 +36,7 @@ namespace Asteroids
         {
             // Графическое устройство для вывода графики            
             Graphics g;
+            timer = new Timer();
             // предоставляет доступ к главному буферу графического контекста для текущего приложения
             context = BufferedGraphicsManager.Current;
             g = form.CreateGraphics();// Создаём объект - поверхность рисования и связываем его с формой
@@ -50,6 +51,16 @@ namespace Asteroids
             timer.Start();
             Load();
             form.FormClosing += Form_FormClosing;
+            form.KeyPress += Form_KeyPress;
+        }
+
+        private static void Form_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\u001b')
+            {
+                MessageBox.Show("");
+                timer.Stop();
+            }
         }
 
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)

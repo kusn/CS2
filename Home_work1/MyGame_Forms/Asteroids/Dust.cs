@@ -11,6 +11,8 @@ namespace Asteroids
     {
         static Image Image { get; } = Image.FromFile("Images\\star.png");
 
+        static Random rnd = new Random();
+
 
         public Dust(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -27,7 +29,7 @@ namespace Asteroids
             Pos = new Point(Pos.X - Dir.X, Pos.Y + Dir.Y);
             if (Pos.X < 0 || Pos.X > Game.Width)
                 //Dir = new Point(-Dir.X, Dir.Y);
-                Pos = new Point(Game.Width, Pos.Y + Dir.Y);
+                Pos = new Point(rnd.Next(0,Game.Width), Pos.Y + Dir.Y);
             if (Pos.Y < 0 || Pos.Y > Game.Height)
                 //Dir = new Point(Dir.X, -Dir.Y);
                 Pos = new Point(Pos.X - Dir.X, Game.Height);
