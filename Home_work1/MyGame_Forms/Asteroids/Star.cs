@@ -10,8 +10,7 @@ namespace Asteroids
     class Star : BaseObject
     {        
         static Image Image { get; } = Image.FromFile("Images\\zvezdy.png");
-
-
+        
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
 
