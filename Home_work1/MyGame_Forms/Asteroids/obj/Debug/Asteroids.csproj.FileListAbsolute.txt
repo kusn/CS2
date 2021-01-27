@@ -19,7 +19,8 @@ d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\bin\Debug\Images\
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\bin\Debug\Images\star.png
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\bin\Debug\Asteroids.exe
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\bin\Debug\Asteroids.pdb
-d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csprojResolveAssemblyReference.cache
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.Form1.resources
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.Properties.Resources.resources
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.Cache
+D:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
+D:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
