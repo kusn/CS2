@@ -20,10 +20,13 @@ namespace Asteroids
         static public int Width { get; private set; }
         static public int Height { get; private set; }
         static public Image background = Image.FromFile("Images\\fon.jpg");
+        static public Image png_pause = Image.FromFile("Images\\pause.png");
 
         static public BaseObject[] objs;
 
         static Timer timer;
+
+        static bool pause = false;
         
         static Random rnd = new Random();
 
@@ -51,19 +54,29 @@ namespace Asteroids
             timer.Start();
             Load();
             form.FormClosing += Form_FormClosing;
-            form.KeyPress += Form_KeyPress;
+            form.KeyPress += Form_KeyPress;             // Реакция на нажатие клавиш
         }
 
         private static void Form_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '\u001b')
+            if (e.KeyChar == '\u001b')                  // Если нажать "Esc"
             {
-                MessageBox.Show("");
-                timer.Stop();
+                if(pause == false)
+                {
+                    timer.Stop();
+                    Buffer.Graphics.DrawImage(png_pause, Width/2 - png_pause.Width / 2, Height / 2 - png_pause.Height / 2);
+                    Buffer.Render();
+                    pause = true;
+                }
+                else
+                {
+                    timer.Start();
+                    pause = false;
+                }
             }
         }
 
-        private static void Form_FormClosing(object sender, FormClosingEventArgs e)
+        private static void Form_FormClosing(object sender, FormClosingEventArgs e)     // Закрытие окна
         {
             timer.Stop();
         }

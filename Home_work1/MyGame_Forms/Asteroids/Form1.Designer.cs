@@ -29,27 +29,15 @@ namespace Asteroids
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Asteroids.Properties.Resources.fon;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(361, 114);
+            this.btnStart.Location = new System.Drawing.Point(455, 238);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(115, 31);
             this.btnStart.TabIndex = 1;
@@ -59,7 +47,7 @@ namespace Asteroids
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(361, 172);
+            this.button2.Location = new System.Drawing.Point(455, 326);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 31);
             this.button2.TabIndex = 2;
@@ -68,7 +56,7 @@ namespace Asteroids
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(361, 233);
+            this.btnExit.Location = new System.Drawing.Point(455, 411);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(115, 31);
             this.btnExit.TabIndex = 3;
@@ -76,28 +64,39 @@ namespace Asteroids
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Кудряшов Сергей";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Asteroids - Menu";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
     }
 }
 
