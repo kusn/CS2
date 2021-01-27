@@ -8,13 +8,7 @@ using System.Drawing;
 namespace Asteroids
 {
     class Star : BaseObject
-    {
-        //public Star(Point pos, Point dir, Size size)
-        //{
-        //    this.Pos = pos;
-        //    this.Dir = dir;
-        //    this.Size = size;
-        //}
+    {        
         static Image Image { get; } = Image.FromFile("Images\\star.png");
 
 

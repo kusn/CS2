@@ -24,3 +24,4 @@ d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroi
 d:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.Cache
 D:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
 D:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
+D:\Kudryashov\Учеба\CS2\Home_work1\MyGame_Forms\Asteroids\bin\Debug\Images\asteroid.png

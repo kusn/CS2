@@ -69,7 +69,7 @@ namespace Asteroids
             for (int i = 0; i < 6; i++)
                 objs[i] = new BaseObject(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(10, 0), new Size(20, 20));
             for (int i = 6; i < 20; i++)
-                objs[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(rnd.Next(10, 100), 0), new Size(20, 20));
+                objs[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(rnd.Next(10, 100), 0), new Size(30, 30));
         }
 
         static public void Draw()
