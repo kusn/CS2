@@ -1,0 +1,7 @@
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\bin\Debug\Workers.exe.config
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\bin\Debug\Workers.exe
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\bin\Debug\Workers.pdb
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\obj\Debug\Workers.csprojAssemblyReference.cache
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\obj\Debug\Workers.csproj.CoreCompileInputs.cache
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\obj\Debug\Workers.exe
+D:\Kudryashov\Учеба\CS2\Home_work2\Workers\Workers\obj\Debug\Workers.pdb
