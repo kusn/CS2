@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    abstract class BaseObject
+    abstract class BaseObject : ICollision
     {
         protected Point Pos { get; set; }//X,Y
         protected Point Dir { get; set; }//X,Y
         protected Size Size { get; set; }
 
-        static Image Image { get; } = Image.FromFile("Images\\asteroid.png");
-        //static Image asteroid = Image.FromFile("Images\\asteroid.png");
+        public Rectangle Rect => new Rectangle(Pos, Size);
 
         public BaseObject()
         {
@@ -29,21 +28,13 @@ namespace Asteroids
             this.Size = size;
         }
 
-        public virtual void Draw()
-        {
-            //Game.Buffer.Graphics.FillEllipse(Brushes.White, Pos.X, Pos.Y, Size.Width, Size.Height);
-            Game.Buffer.Graphics.DrawImage(Image, Pos);
-        }
+        abstract public void Draw();
 
-        public virtual void Update()
+        abstract public void Update();
+
+        public bool Collision(ICollision obj)
         {
-            /*Pos = new Point(Pos.X - Dir.X, Pos.Y + Dir.Y);
-            if (Pos.X < 0 || Pos.X > Game.Width)
-                //Dir = new Point(-Dir.X, Dir.Y);
-                Pos = new Point(Game.Width, Game.Random.Next(0,Game.Height + Dir.Y));
-            if (Pos.Y < 0 || Pos.Y > Game.Height)
-                //Dir = new Point(Dir.X, -Dir.Y);
-                Pos = new Point(Pos.X - Dir.X, Game.Height);*/
-        }
+            return this.Rect.IntersectsWith(obj.Rect);
+        }        
     }    
 }

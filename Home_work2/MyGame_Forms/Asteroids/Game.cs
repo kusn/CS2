@@ -21,15 +21,16 @@ namespace Asteroids
         static public int Height { get; private set; }
         static public Image background = Image.FromFile("Images\\fon.jpg");
         static public Image png_pause = Image.FromFile("Images\\pause.png");
+        static public Image bang = Image.FromFile("Images\\Bang.png");
 
         static public Asteroid[] asteroids;
         static public Dust[] dust;
         static public Star[] stars;
+        static public Bullet bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));
 
         static Timer timer;
-
+        static public int Health { get; private set; } = 100;
         static bool pause = false;
-        
         static Random rnd = new Random();
 
         static Game()
@@ -96,7 +97,7 @@ namespace Asteroids
             stars = new Star[14];
 
             for (int i = 0; i < 6; i++)
-               asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(20, 20));
+               asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(80, 80));
             for (int i = 0; i < 14; i++)
                 stars[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(1, 0), new Size(20, 20));
             for (int i = 0; i < 20; i++)
@@ -109,10 +110,6 @@ namespace Asteroids
             //Buffer.Graphics.Clear(Color.Black);
             Buffer.Graphics.DrawImage(background, 0, 0);
             //Buffer.Graphics.DrawRectangle(Pens.White, 10, 10, 100, 200);
-            foreach (var obj in asteroids)
-            {
-                obj.Draw();
-            }
             foreach (var obj in stars)
             {
                 obj.Draw();
@@ -121,16 +118,34 @@ namespace Asteroids
             {
                 obj.Draw();
             }
+            foreach (var obj in asteroids)
+            {
+                obj.Draw();
+            }
+            bullet.Draw();
             Buffer.Render();
         }
         static public void Update()
         {
+            int i = 0;
             foreach (var obj in asteroids)
+            {
                 obj.Update();
+                if (obj.Collision(bullet))
+                {
+                    Buffer.Graphics.DrawImage(bang, obj.Rect.X, obj.Rect.Y, 80, 80);
+                    Buffer.Render();
+                    System.Media.SystemSounds.Hand.Play();
+                    bullet = new Bullet(new Point(0, rnd.Next(0, Height)), new Point(5, 0), new Size(10, 5));
+                    asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(80, 80));                    
+                }
+                i++;
+            }
             foreach (var obj in stars)
                 obj.Update();
             foreach (var obj in dust)
                 obj.Update();
+            bullet.Update();
         }
 
     }

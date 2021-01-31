@@ -58,3 +58,5 @@ D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroi
 D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
 D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.exe
 D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.pdb
+D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\bin\Debug\Images\bullet.png
+D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\bin\Debug\Images\Bang.png
