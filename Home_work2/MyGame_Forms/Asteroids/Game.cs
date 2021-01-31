@@ -19,9 +19,10 @@ namespace Asteroids
         static public Random Random { get; } = new Random();
         static public int Width { get; private set; }
         static public int Height { get; private set; }
-        static public Image background = Image.FromFile("Images\\fon.jpg");
-        static public Image png_pause = Image.FromFile("Images\\pause.png");
-        static public Image bang = Image.FromFile("Images\\Bang.png");
+        static private Image background = Image.FromFile("Images\\fon.jpg");
+        static private Image png_pause = Image.FromFile("Images\\pause.png");
+        static private Image bang = Image.FromFile("Images\\Bang.png");
+        static private System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
         static public Asteroid[] asteroids;
         static public Dust[] dust;
@@ -31,7 +32,7 @@ namespace Asteroids
         static Timer timer;
         static public int Health { get; private set; } = 100;
         static bool pause = false;
-        static Random rnd = new Random();
+        static Random rnd = new Random();        
 
         static Game()
         {
@@ -56,6 +57,7 @@ namespace Asteroids
             timer.Tick += Timer_Tick; ;
             timer.Start();
             Load();
+            player.SoundLocation = "Sounds\\bang.mp3";
             form.FormClosing += Form_FormClosing;
             form.KeyPress += Form_KeyPress;             // Реакция на нажатие клавиш
         }
@@ -133,9 +135,7 @@ namespace Asteroids
                 obj.Update();
                 if (obj.Collision(bullet))
                 {
-                    Buffer.Graphics.DrawImage(bang, obj.Rect.X, obj.Rect.Y, 80, 80);
-                    Buffer.Render();
-                    System.Media.SystemSounds.Hand.Play();
+                    Bang(obj);
                     bullet = new Bullet(new Point(0, rnd.Next(0, Height)), new Point(5, 0), new Size(10, 5));
                     asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(80, 80));                    
                 }
@@ -146,6 +146,14 @@ namespace Asteroids
             foreach (var obj in dust)
                 obj.Update();
             bullet.Update();
+        }
+
+        static private void Bang(BaseObject obj)
+        {
+            Buffer.Graphics.DrawImage(bang, obj.Rect.X, obj.Rect.Y, 100, 100);
+            Buffer.Render();
+            //System.Media.SystemSounds.Hand.Play();            
+            player.Play();
         }
 
     }
