@@ -49,21 +49,21 @@ namespace Workers
             FixedPaymentWorker[] fixedPayments = new FixedPaymentWorker[3] {new FixedPaymentWorker("One", "Two", 20), new FixedPaymentWorker("Three", "Four", 100), new FixedPaymentWorker("Five", "Six", 30) };
 
             foreach (Object tbw in timeBaseds)
-                Console.WriteLine((tbw as Worker).FirstName + " " + (tbw as Worker).LastName);
+                Console.WriteLine(tbw);
 
             // Сортировка по имени
             Console.WriteLine("Сортировка по имени");
             Array.Sort(timeBaseds, new SortByFirstName());
             
             foreach (Object tbw in timeBaseds)
-                Console.WriteLine((tbw as Worker).FirstName + " " + (tbw as Worker).LastName);
+                Console.WriteLine(tbw + " " + (tbw as TimeBasedWorker).GetAverageMonthlySalary().ToString());
 
             // Сортировка по фамилии
             Console.WriteLine("Сортировка по фамилии");
             Array.Sort(timeBaseds, new SortByLastName());
 
             foreach (Object tbw in timeBaseds)
-                Console.WriteLine((tbw as Worker).FirstName + " " + (tbw as Worker).LastName);
+                Console.WriteLine(tbw + " " + (tbw as TimeBasedWorker).GetAverageMonthlySalary().ToString());
 
             Console.ReadKey();
         }

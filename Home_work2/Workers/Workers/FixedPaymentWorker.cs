@@ -20,5 +20,10 @@ namespace Workers
         {
             return salary;
         }
+
+        public override string ToString()
+        {
+            return firstName + " " + lastName;
+        }
     }
 }

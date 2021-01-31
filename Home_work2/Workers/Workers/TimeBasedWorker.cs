@@ -24,7 +24,12 @@ namespace Workers
         {
             return 20.8 * 8 * salary;
         }
-        
+
+        public override string ToString()
+        {
+            return firstName + " " + lastName;
+        }
+
         /*public TimeBasedWorker this[int index]
         {
             get
