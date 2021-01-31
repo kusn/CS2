@@ -58,9 +58,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="GameObjectException.cs" />
     <Compile Include="ICollision.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ship.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -114,7 +116,7 @@
     <Content Include="Images\zvezdy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Sounds\bang.mp3">
+    <Content Include="Sounds\bang.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
