@@ -27,9 +27,9 @@ namespace Asteroids
         static public Asteroid[] asteroids;
         static public Dust[] dust;
         static public Star[] stars;
-        static public Bullet bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));
-        //static public Bullet bullet;
-        static Ship ship = new Ship(new Point(0, 300), new Point(5, 0), new Size(10, 5));
+        static public Bullet bullet;
+        //static public Bullet bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));        
+        private static Ship ship = new Ship(new Point(0, 300), new Point(5, 1), new Size(10, 10));
 
         static Timer timer;
         static public int Health { get; private set; } = 100;
@@ -65,12 +65,12 @@ namespace Asteroids
             timer.Start();
             Load();                        
             form.FormClosing += Form_FormClosing;
-            form.KeyPress += Form_KeyPress;             // Реакция на нажатие клавиш
+            form.KeyDown += Form_KeyDown;             // Реакция на нажатие клавиш
         }
 
-        private static void Form_KeyPress(object sender, KeyPressEventArgs e)
+        private static void Form_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == '\u001b')                  // Если нажать "Esc"
+            if (e.KeyCode == Keys.Escape)                  // Если нажать "Esc"
             {
                 if(pause == false)
                 {
@@ -85,13 +85,11 @@ namespace Asteroids
                     pause = false;
                 }
             }
-            else if (e.KeyChar == 32)
-            {
-                /*Point p = new Point(ship.GetX, ship.Rect.Y + ship.Rect.Height / 2);
-                bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));
-                bullet.Draw();*/
-            }
-                
+            else if (e.KeyCode == Keys.Space) bullet = new Bullet(new Point(ship.Rect.X + 10, ship.Rect.Y + 4), new Point(10, 0), new Size(4, 1));
+            else if (e.KeyCode == Keys.Up) ship.Up();
+            else if (e.KeyCode == Keys.Down) ship.Down();
+
+
         }
 
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)     // Закрытие окна
@@ -135,11 +133,12 @@ namespace Asteroids
             }
             foreach (var obj in asteroids)
             {
-                obj.Draw();
+                obj?.Draw();
             }
-            //if (bullet != null)
-                bullet.Draw();
-            ship.Draw();
+            bullet?.Draw();
+            ship?.Draw();
+            if (ship != null)
+                Buffer.Graphics.DrawString("Energy:" + ship.Energy, SystemFonts.DefaultFont, Brushes.White, 0, 0);
             Buffer.Render();
         }
         static public void Update()
@@ -151,7 +150,7 @@ namespace Asteroids
                 if (bullet != null && obj.Collision(bullet))
                 {
                     Bang(obj);
-                    bullet = new Bullet(new Point(0, rnd.Next(0, Height)), new Point(5, 0), new Size(10, 5));
+                    
                     asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79));                    
                 }
                 i++;
@@ -160,8 +159,7 @@ namespace Asteroids
                 obj.Update();
             foreach (var obj in dust)
                 obj.Update();
-            //if (bullet != null)
-                bullet.Update();
+            bullet?.Update();
             ship.Update();
         }
 

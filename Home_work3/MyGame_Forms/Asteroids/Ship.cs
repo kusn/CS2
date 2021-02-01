@@ -19,7 +19,7 @@ namespace Asteroids
         }
 
         public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
-        {
+        {            
         }
 
         public override void Draw()
@@ -36,8 +36,17 @@ namespace Asteroids
 
         public void Up()
         {
-            if (Pos.Y > 0) Pos.Y = Pos.Y - Dir.Y;
+            if (Pos.Y > 0) Pos = new Point(Pos.X, Pos.Y - Dir.Y);
         }
+
+        public void Down()
+        {
+            if (Pos.Y < Game.Height) Pos = new Point(Pos.X, Pos.Y + Dir.Y);
+        }
+        public void Die()
+        {
+        }
+
 
         /*public int GetX
         {

@@ -35,6 +35,6 @@ namespace Asteroids
         public bool Collision(ICollision obj)
         {
             return this.Rect.IntersectsWith(obj.Rect);
-        }        
+        }
     }    
 }

@@ -24,8 +24,8 @@ namespace Asteroids
         public override void Update()
         {
             Pos = new Point(Pos.X + Dir.X, Pos.Y);
-            if (Pos.X > Game.Width)
-                Pos = new Point(0, Game.Random.Next(0, Game.Height));
+            /*if (Pos.X > Game.Width)
+                Pos = new Point(0, Game.Random.Next(0, Game.Height));*/
         }
     }
 }
