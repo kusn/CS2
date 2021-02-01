@@ -98,3 +98,4 @@ D:\Projects\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.Gen
 D:\Projects\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
 D:\Projects\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.exe
 D:\Projects\CS2\Home_work2\MyGame_Forms\Asteroids\obj\Debug\Asteroids.pdb
+D:\Kudryashov\Учеба\CS2\Home_work2\MyGame_Forms\Asteroids\bin\Debug\Sounds\bang.wav
