@@ -9,7 +9,14 @@ namespace Asteroids
 {
     class Ship : BaseObject
     {
+        private int _energy = 100;
+        public int Energy => _energy;
         static Image Image { get; } = Image.FromFile("Images\\ship.png");
+
+        public void EnergyLow(int n)
+        {
+            _energy -= n;
+        }
 
         public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -25,6 +32,11 @@ namespace Asteroids
             Pos = new Point(Pos.X + Dir.X, Pos.Y);
             if (Pos.X > Game.Width)
                 Pos = new Point(0, Game.Random.Next(0, Game.Height));
+        }
+
+        public void Up()
+        {
+            if (Pos.Y > 0) Pos.Y = Pos.Y - Dir.Y;
         }
 
         /*public int GetX
