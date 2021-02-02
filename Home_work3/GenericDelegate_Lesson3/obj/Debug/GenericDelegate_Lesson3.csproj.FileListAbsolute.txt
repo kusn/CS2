@@ -1,8 +1,0 @@
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\bin\Debug\GenericDelegate_Lesson3.exe.config
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\bin\Debug\GenericDelegate_Lesson3.exe
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\bin\Debug\GenericDelegate_Lesson3.pdb
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\obj\Debug\GenericDelegate_Lesson3.csprojAssemblyReference.cache
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\obj\Debug\GenericDelegate_Lesson3.csproj.CoreCompileInputs.cache
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\obj\Debug\GenericDelegate_Lesson3.exe
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\obj\Debug\GenericDelegate_Lesson3.pdb
-D:\Kudryashov\Учеба\CS2\Home_work3\GenericDelegate_Lesson3\bin\Debug\data.txt

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A271D967-4360-413D-A9F6-3D2EE6DF96F5}</ProjectGuid>
+    <ProjectGuid>{613A1DEA-4FAC-402E-99F5-5C8156318D67}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GenericDelegate_Lesson3</RootNamespace>
-    <AssemblyName>GenericDelegate_Lesson3</AssemblyName>
+    <RootNamespace>GenericDelegate2_Lesson3</RootNamespace>
+    <AssemblyName>GenericDelegate2_Lesson3</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,11 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="data.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
