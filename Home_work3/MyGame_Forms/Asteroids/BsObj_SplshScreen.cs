@@ -37,10 +37,12 @@ namespace Asteroids
         public virtual void Update()
         {
             Pos = new Point(Pos.X - Dir.X, Pos.Y + Dir.Y);
-            if (Pos.X < 0 || Pos.X > SplashScreen.Width)                
-                Pos = new Point(SplashScreen.Width / 2, Pos.Y + Dir.Y);
-            if (Pos.Y < 0 || Pos.Y > SplashScreen.Height)                
-                Pos = new Point(Pos.X - Dir.X, SplashScreen.Height / 2);
+            if (Pos.X < 0 || Pos.X > SplashScreen.Width)
+                //Pos = new Point(SplashScreen.Width / 2, SplashScreen.Height / 2 + Dir.Y);
+                Pos = new Point(SplashScreen.rnd.Next(0, SplashScreen.Width), SplashScreen.rnd.Next(0, SplashScreen.Height));
+            if (Pos.Y < 0 || Pos.Y > SplashScreen.Height)
+                //Pos = new Point(SplashScreen.Width / 2 - Dir.X, SplashScreen.Height / 2);
+                Pos = new Point(SplashScreen.rnd.Next(0, SplashScreen.Width), SplashScreen.rnd.Next(0, SplashScreen.Height));
         }
     }
 }

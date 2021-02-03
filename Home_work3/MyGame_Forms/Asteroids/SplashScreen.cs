@@ -27,7 +27,7 @@ namespace Asteroids
 
         static Timer timer;
 
-        static Random rnd = new Random();
+        static public Random rnd = new Random();
         static double multi = 180.0 / Math.PI;
         static double multi1 = 360 / 10;
 
@@ -67,10 +67,16 @@ namespace Asteroids
         static void Load()
         {
             objs = new BsObj_SplshScreen[10];
-            for (int i = 0; i < 5; i++)
-                objs[i] = new BsObj_SplshScreen(new Point(Width / 2, Height / 2), new Point((int)(Game.Random.Next(2, 6) * Math.Cos(i * multi1 * multi)), (int)(Game.Random.Next(2, 6) * Math.Sin(i * multi1 * multi))), new Size(20, 20));
-            for (int i = 5; i < 10; i++)
-                objs[i] = new BsObj_SplshScreen(new Point(Width / 2, Height / 2), new Point((int)(Game.Random.Next(2, 6) * Math.Cos(i * multi1 * multi)), (int)(Game.Random.Next(2, 6) * Math.Sin(i * multi1 * multi))), new Size(20, 20));
+            for (int i = 0; i < 10; i++)
+            {
+                Point p = GetPos();
+                //objs[i] = new BsObj_SplshScreen(new Point(Width / 2, Height / 2), new Point((int)(Game.Random.Next(2, 6) * Math.Cos(i * multi1 * multi)), (int)(Game.Random.Next(2, 6) * Math.Sin(i * multi1 * multi))), new Size(20, 20));
+                objs[i] = new BsObj_SplshScreen(p, GetDir(p), new Size(20, 20));
+            }
+
+
+            //for (int i = 5; i < 10; i++)
+            //objs[i] = new BsObj_SplshScreen(new Point(Width / 2, Height / 2), new Point((int)(Game.Random.Next(2, 6) * Math.Cos(i * multi1 * multi)), (int)(Game.Random.Next(2, 6) * Math.Sin(i * multi1 * multi))), new Size(20, 20));
             /*for (int i = 6; i < 20; i++)
                 objs[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(1, 0), new Size(20, 20));
             for (int i = 20; i < 40; i++)
@@ -93,6 +99,17 @@ namespace Asteroids
         {
             foreach (var obj in objs)
                 obj.Update();
+        }
+
+        static public Point GetPos()
+        {
+            return new Point(rnd.Next(0, SplashScreen.Width), rnd.Next(0, SplashScreen.Height));
+        }
+
+        static public Point GetDir(Point p)
+        {
+            int k = rnd.Next(2, 6);
+            return new Point((int)(k * Math.Cos(Math.Atan2(p.Y - SplashScreen.Height / 2, p.X - SplashScreen.Width / 2))), (int)(k * Math.Sin(Math.Atan2(p.Y - SplashScreen.Height / 2, p.X - SplashScreen.Width / 2))));
         }
     }
 }
