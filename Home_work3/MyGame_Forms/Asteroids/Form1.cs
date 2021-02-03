@@ -1,11 +1,11 @@
 ﻿// Кудряшов Сергей
 
-// 2. Переделать виртуальный метод Update в BaseObject в абстрактный и реализовать его в наследниках.
-// 3.Сделать так, чтобы при столкновениях пули с астероидом они регенерировались в разных концах экрана.
-// 4. Сделать проверку на задание размера экрана в классе Game. Если высота или ширина (Width, Height)
-// больше 1000 или принимает отрицательное значение, выбросить исключение ArgumentOutOfRangeException().
-// 5. * Создать собственное исключение GameObjectException, которое появляется при попытке создать объект
-// с неправильными характеристиками (например, отрицательные размеры, слишком большая скорость или позиция).
+// 1.Добавить космический корабль, как описано в уроке.
+// 2. Добработать игру «Астероиды».
+// а) Добавить ведение журнала в консоль с помощью делегатов;
+// б) *Добавить это и в файл.
+// 3. Разработать аптечки, которые добавляют энергию.
+// 4. Добавить подсчет очков за сбитые астероиды.
 
 using System;
 using System.Collections.Generic;
@@ -16,16 +16,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Asteroids
 {
     public partial class Form1 : Form
-    {
+    {        
         public Form1()
         {
-            InitializeComponent();
-            this.Activate();
-            this.Focus();
+            InitializeComponent();            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -42,8 +41,8 @@ namespace Asteroids
             Game.Init(form);
             form.Show();
             this.Hide();
-            Game.Draw();
-        }
+            Game.Draw();            
+    }
 
         private void Form_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -52,9 +51,7 @@ namespace Asteroids
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            SplashScreen.Init(this);
-            SplashScreen.Draw();
-            SplashScreen.Update();
+            SplashScreen.Init(this);            
         }
     }
 }

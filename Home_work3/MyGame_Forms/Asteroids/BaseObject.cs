@@ -9,6 +9,8 @@ namespace Asteroids
 {
     abstract class BaseObject : ICollision
     {
+        public delegate void Message();
+        public delegate void EMessageToLog(string s);
         protected Point Pos { get; set; }//X,Y
         protected Point Dir { get; set; }//X,Y
         protected Size Size { get; set; }

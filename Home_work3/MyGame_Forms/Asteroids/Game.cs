@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Text;
+using System.IO;
 
 namespace Asteroids
 {
     static class Game
-    {
+    {        
         static public ulong Timer { get; private set; } = 0;
 
         static BufferedGraphicsContext context;
@@ -23,13 +25,14 @@ namespace Asteroids
         static private Image png_pause = Image.FromFile("Images\\pause.png");
         static private Image bang = Image.FromFile("Images\\Bang.png");
         static private System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        static public StreamWriter sw = new StreamWriter("Logs\\Game.log", true);
 
         static public Asteroid[] asteroids;
         static public Dust[] dust;
         static public Star[] stars;
         static public Bullet bullet;
-        //static public Bullet bullet = new Bullet(new Point(0, 400), new Point(5, 0), new Size(10, 5));        
-        private static Ship ship = new Ship(new Point(0, 300), new Point(5, 1), new Size(10, 10));
+        static public FirstAidKit[] aidKits;
+        private static Ship ship;
 
         static Timer timer;
         static public int Health { get; private set; } = 100;
@@ -55,10 +58,10 @@ namespace Asteroids
             Height = form.ClientSize.Height;
             if (Width > Screen.PrimaryScreen.Bounds.Size.Width || Height > Screen.PrimaryScreen.Bounds.Size.Height) //Обрабатываем исключение "Превышен размер окна".
                 throw new ArgumentOutOfRangeException($"Задан слишком большой размер окна. Необходимо не более {Screen.PrimaryScreen.Bounds.Size.Width}х{Screen.PrimaryScreen.Bounds.Size.Height} пкс.");
-
             // Связываем буфер в памяти с графическим объектом.
             // для того, чтобы рисовать в буфере
             Buffer = context.Allocate(g, new Rectangle(0, 0, Width, Height));
+
             player.SoundLocation = "Sounds\\bang.wav";
             timer.Interval = 100;
             timer.Tick += Timer_Tick; ;
@@ -66,6 +69,8 @@ namespace Asteroids
             Load();                        
             form.FormClosing += Form_FormClosing;
             form.KeyDown += Form_KeyDown;             // Реакция на нажатие клавиш
+            Ship.MessageDie += Finish;
+            Ship.MessageToLog += ToLog;
         }
 
         private static void Form_KeyDown(object sender, KeyEventArgs e)
@@ -88,6 +93,8 @@ namespace Asteroids
             else if (e.KeyCode == Keys.Space) bullet = new Bullet(new Point(ship.Rect.X + 10, ship.Rect.Y + 4), new Point(10, 0), new Size(4, 1));
             else if (e.KeyCode == Keys.Up) ship.Up();
             else if (e.KeyCode == Keys.Down) ship.Down();
+            else if (e.KeyCode == Keys.Right) ship.Right();
+            else if (e.KeyCode == Keys.Left) ship.Left();
 
 
         }
@@ -95,6 +102,7 @@ namespace Asteroids
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)     // Закрытие окна
         {
             timer.Stop();
+            sw.Close();
         }
 
         private static void Timer_Tick(object sender, EventArgs e)
@@ -108,21 +116,23 @@ namespace Asteroids
             asteroids = new Asteroid[6];
             dust = new Dust[20];
             stars = new Star[14];
+            aidKits = new FirstAidKit[5];
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < asteroids.Length; i++)
                asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79));
-            for (int i = 0; i < 14; i++)
+            for (int i = 0; i < stars.Length; i++)
                 stars[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(1, 0), new Size(20, 20));
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < dust.Length; i++)
                 dust[i] = new Dust(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(rnd.Next(100, 100), 0), new Size(20, 20));
+            for (int i = 0; i < aidKits.Length; i++)
+                aidKits[i] = new FirstAidKit(new Point(Width, rnd.Next(Height * i / 5, Height * (i + 1) / 5)), new Point(rnd.Next(5, 10), 0), new Size(20, 20));
+            ship = new Ship(new Point(0, 300), new Point(2, 4), new Size(30, 30));
 
         }
 
         static public void Draw()
         {
-            //Buffer.Graphics.Clear(Color.Black);
             Buffer.Graphics.DrawImage(background, 0, 0);
-            //Buffer.Graphics.DrawRectangle(Pens.White, 10, 10, 100, 200);
             foreach (var obj in stars)
             {
                 obj.Draw();
@@ -131,6 +141,10 @@ namespace Asteroids
             {
                 obj.Draw();
             }
+            foreach (var obj in aidKits)
+            {
+                obj?.Draw();
+            }
             foreach (var obj in asteroids)
             {
                 obj?.Draw();
@@ -138,7 +152,10 @@ namespace Asteroids
             bullet?.Draw();
             ship?.Draw();
             if (ship != null)
+            {
                 Buffer.Graphics.DrawString("Energy:" + ship.Energy, SystemFonts.DefaultFont, Brushes.White, 0, 0);
+                Buffer.Graphics.DrawString("Score:" + ship.Score, SystemFonts.DefaultFont, Brushes.White, 0, 15);
+            }
             Buffer.Render();
         }
         static public void Update()
@@ -149,12 +166,37 @@ namespace Asteroids
                 obj.Update();
                 if (bullet != null && obj.Collision(bullet))
                 {
+                    Bang(obj);                    
+                    asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79));
+                    bullet = null;
+                    ship.ScoreUp();
+                    //Console.WriteLine("Bang!");
+                }
+                if (ship != null && obj.Collision(ship))
+                {
                     Bang(obj);
-                    
-                    asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79));                    
+                    asteroids[i] = new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79));
+                    //Console.WriteLine("Clash!");
+                    ship.EnergyLow(rnd.Next(1, 10));
+                    if (ship.Energy <= 0) ship.Die();
                 }
                 i++;
             }
+
+            int j = 0;
+            foreach (var obj in aidKits)
+            {
+                int e;                
+                obj.Update();                
+                if (ship != null && obj.Collision(ship))
+                {
+                    aidKits[j] = new FirstAidKit(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(20, 20));                    
+                    e = rnd.Next(1, 10);
+                    ship.EnergyUp(e);                    
+                }
+                j++;
+            }
+
             foreach (var obj in stars)
                 obj.Update();
             foreach (var obj in dust)
@@ -171,5 +213,17 @@ namespace Asteroids
             //System.Media.SystemSounds.Hand.Play(); 
         }
 
+        public static void Finish()
+        {
+            timer.Stop();
+            Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60, FontStyle.Underline), Brushes.White, 200, 100);
+            Buffer.Render();
+        }
+
+        public static void ToLog(string s)
+        {            
+            Console.WriteLine(s);            
+            sw.WriteLine(s);
+        }
     }
 }
