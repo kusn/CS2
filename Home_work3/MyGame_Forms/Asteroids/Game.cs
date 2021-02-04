@@ -25,7 +25,7 @@ namespace Asteroids
         static private Image png_pause = Image.FromFile("Images\\pause.png");
         static private Image bang = Image.FromFile("Images\\Bang.png");
         static private System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        static public StreamWriter sw = new StreamWriter("Logs\\Game.log", true);
+        //static public StreamWriter sw = new StreamWriter("Logs\\Game.log", true);
 
         static public Asteroid[] asteroids;
         static public Dust[] dust;
@@ -102,7 +102,7 @@ namespace Asteroids
         private static void Form_FormClosing(object sender, FormClosingEventArgs e)     // Закрытие окна
         {
             timer.Stop();
-            sw.Close();
+            //sw.Close();
         }
 
         private static void Timer_Tick(object sender, EventArgs e)
@@ -223,7 +223,18 @@ namespace Asteroids
         public static void ToLog(string s)
         {            
             Console.WriteLine(s);            
-            sw.WriteLine(s);
+            //sw.WriteLine(s);
+            try
+            {
+                using (StreamWriter sw = new StreamWriter("..\\..\\Game.log", true))
+                {
+                    sw.Write(s);
+                }
+            }
+            catch (Exception exp)
+            {
+                Console.Write(exp.Message);
+            }
         }
     }
 }

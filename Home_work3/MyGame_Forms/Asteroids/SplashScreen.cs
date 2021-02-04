@@ -69,8 +69,7 @@ namespace Asteroids
             objs = new BsObj_SplshScreen[10];
             for (int i = 0; i < 10; i++)
             {
-                Point p = GetPos();
-                //objs[i] = new BsObj_SplshScreen(new Point(Width / 2, Height / 2), new Point((int)(Game.Random.Next(2, 6) * Math.Cos(i * multi1 * multi)), (int)(Game.Random.Next(2, 6) * Math.Sin(i * multi1 * multi))), new Size(20, 20));
+                Point p = GetPos();                
                 objs[i] = new BsObj_SplshScreen(p, GetDir(p), new Size(20, 20));
             }
 
@@ -103,13 +102,29 @@ namespace Asteroids
 
         static public Point GetPos()
         {
-            return new Point(rnd.Next(0, SplashScreen.Width), rnd.Next(0, SplashScreen.Height));
+            return new Point(rnd.Next(0, Width), rnd.Next(0, Height));
         }
 
         static public Point GetDir(Point p)
         {
-            int k = rnd.Next(2, 6);
-            return new Point((int)(k * Math.Cos(Math.Atan2(p.Y - SplashScreen.Height / 2, p.X - SplashScreen.Width / 2))), (int)(k * Math.Sin(Math.Atan2(p.Y - SplashScreen.Height / 2, p.X - SplashScreen.Width / 2))));
+            Point dir = new Point(1, 1);
+            int k = rnd.Next(2, 6);            
+            if (p.X > Width / 2 && p.Y < Height / 2)
+                dir = new Point((int)(k * Math.Sin(Math.Atan2(p.Y, p.X))), -(int)(k * Math.Cos(Math.Atan2(p.Y, p.X))));
+            else if (p.X > Width / 2 && p.Y > Height / 2)
+                dir = new Point((int)(k * Math.Sin(Math.Atan2(p.Y, p.X))), (int)(k * Math.Cos(Math.Atan2(p.Y, p.X))));
+            else if (p.X < Width / 2 && p.Y > Height / 2)
+                dir = new Point(-(int)(k * Math.Sin(Math.Atan2(p.Y, p.X))), (int)(k * Math.Cos(Math.Atan2(p.Y, p.X))));
+            else if (p.X < Width / 2 && p.Y < Height / 2)
+                dir = new Point(-(int)(k * Math.Sin(Math.Atan2(p.Y, p.X))), -(int)(k * Math.Cos(Math.Atan2(p.Y, p.X))));
+            return dir;
+        }
+
+        static public int GetSize(Point p)
+        {
+            int size;
+            size = (int)(Math.Abs(Convert.ToDouble(p.X) - Width / 2.0) / (Height / 2) * 80);
+            return size;
         }
     }
 }
