@@ -226,9 +226,9 @@ namespace Asteroids
             //sw.WriteLine(s);
             try
             {
-                using (StreamWriter sw = new StreamWriter("..\\..\\Game.log", true))
+                using (StreamWriter sw = new StreamWriter("Logs\\Game.log", true))
                 {
-                    sw.Write(s);
+                    sw.WriteLine(DateTime.Now + " - " + s);
                 }
             }
             catch (Exception exp)
