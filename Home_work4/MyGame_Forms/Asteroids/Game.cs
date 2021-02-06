@@ -21,11 +21,14 @@ namespace Asteroids
         static public Random Random { get; } = new Random();
         static public int Width { get; private set; }
         static public int Height { get; private set; }
+
         static private Image background = Image.FromFile("Images\\fon.jpg");
         static private Image png_pause = Image.FromFile("Images\\pause.png");
         static private Image bang = Image.FromFile("Images\\Bang.png");
         static private System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        //static public StreamWriter sw = new StreamWriter("Logs\\Game.log", true);
+        static string fileOfLogName = "..\\..\\Game.log";
+        static bool pause = false;
+        static int asteroidsCount = 2;
 
         static public List<Asteroid> asteroids;
         static public Dust[] dust;
@@ -33,10 +36,10 @@ namespace Asteroids
         static public List<Bullet> bullets;
         static public List<FirstAidKit> aidKits;
         private static Ship ship;
-
         static Timer timer;
+
         static public int Health { get; private set; } = 100;
-        static bool pause = false;
+        
         static Random rnd = new Random();        
 
         static Game()
@@ -46,6 +49,8 @@ namespace Asteroids
 
         static public void Init(Form form)
         {
+            File.Delete(fileOfLogName);
+            
             // Графическое устройство для вывода графики            
             Graphics g;
             timer = new Timer();
@@ -112,15 +117,23 @@ namespace Asteroids
             Game.Update();
         }
 
+        static void AsteroidInit()
+        {
+            asteroids = new List<Asteroid>(asteroidsCount);
+            for (int i = 0; i < asteroidsCount; i++)
+                asteroids.Add(new Asteroid(new Point(Width, rnd.Next(Height * i / asteroidsCount, Height * (i + 1) / asteroidsCount)), new Point(rnd.Next(5, 10), 0), new Size(79, 79)));
+        }
+
         static void Load()
         {
-            asteroids = new List<Asteroid>();
+            //asteroids = new List<Asteroid>();
             dust = new Dust[20];
             stars = new Star[14];
             aidKits = new List<FirstAidKit>();
+            AsteroidInit();
 
-            for (int i = 0; i < 6; i++)
-               asteroids.Add(new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79)));
+            //for (int i = 0; i < 6; i++)
+            //   asteroids.Add(new Asteroid(new Point(Width, rnd.Next(Height * i / 6, Height * (i + 1) / 6)), new Point(rnd.Next(5, 10), 0), new Size(79, 79)));
             for (int i = 0; i < stars.Length; i++)
                 stars[i] = new Star(new Point(rnd.Next(0, Width), rnd.Next(0, Height)), new Point(1, 0), new Size(20, 20));
             for (int i = 0; i < dust.Length; i++)
@@ -177,7 +190,7 @@ namespace Asteroids
                 asteroids[i].Update();
                 for (int k = 0; k < bullets.Count; k++)
                 {
-                    if (bullets.Count > 0 && asteroids.Count > 0 && asteroids[i].Collision(bullets[k]))
+                    if (bullets.Count > 0 && asteroids.Count > 0 && i >= 0 && asteroids[i].Collision(bullets[k]))
                     {
                         Bang(asteroids[i]);
                         asteroids.RemoveAt(i);
@@ -219,6 +232,12 @@ namespace Asteroids
                 bullets[i].Update();
             }
             ship.Update();
+
+            if(asteroids.Count == 0)
+            {
+                asteroidsCount++;
+                AsteroidInit();
+            }
         }
 
         static private void Bang(BaseObject obj)
@@ -242,7 +261,7 @@ namespace Asteroids
             //sw.WriteLine(s);
             try
             {
-                using (StreamWriter sw = new StreamWriter("..\\..\\Game.log", true))
+                using (StreamWriter sw = new StreamWriter(fileOfLogName, true))
                 {
                     sw.Write(s);
                 }
