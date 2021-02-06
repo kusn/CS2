@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1321
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroids", "MyGame_Forms\Asteroids\Asteroids.csproj", "{59E1C61F-4A18-4241-BD57-93345EACF08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1Asteroids", "MyGame_Forms\Asteroids\1Asteroids.csproj", "{59E1C61F-4A18-4241-BD57-93345EACF08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSamples", "ListSamples\ListSamples.csproj", "{ABEA188E-F92B-46CC-A100-70D8A58A7CBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2ListSamples", "ListSamples\2ListSamples.csproj", "{ABEA188E-F92B-46CC-A100-70D8A58A7CBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DictOrderBySamples", "DictSamples\3DictOrderBySamples.csproj", "{D015393B-0B2C-41BF-8293-03E414F14B3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ABEA188E-F92B-46CC-A100-70D8A58A7CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABEA188E-F92B-46CC-A100-70D8A58A7CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABEA188E-F92B-46CC-A100-70D8A58A7CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D015393B-0B2C-41BF-8293-03E414F14B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D015393B-0B2C-41BF-8293-03E414F14B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D015393B-0B2C-41BF-8293-03E414F14B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D015393B-0B2C-41BF-8293-03E414F14B3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

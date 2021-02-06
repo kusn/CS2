@@ -1,0 +1,7 @@
+D:\Projects\CS2\Home_work4\DictSamples\bin\Debug\DictSamples.exe.config
+D:\Projects\CS2\Home_work4\DictSamples\bin\Debug\DictSamples.exe
+D:\Projects\CS2\Home_work4\DictSamples\bin\Debug\DictSamples.pdb
+D:\Projects\CS2\Home_work4\DictSamples\obj\Debug\DictSamples.csprojAssemblyReference.cache
+D:\Projects\CS2\Home_work4\DictSamples\obj\Debug\DictSamples.csproj.CoreCompileInputs.cache
+D:\Projects\CS2\Home_work4\DictSamples\obj\Debug\DictSamples.exe
+D:\Projects\CS2\Home_work4\DictSamples\obj\Debug\DictSamples.pdb
