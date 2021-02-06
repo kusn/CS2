@@ -17,8 +17,7 @@ namespace ListSamples
     {
         private static IDictionary<T,int> GetFrequencyOfElement<T>(ICollection<T> list)
         {
-            Dictionary<T, int> found = new Dictionary<T, int>();
-            List<T> uniques = new List<T>();
+            Dictionary<T, int> found = new Dictionary<T, int>();            
             
             foreach (T val in list)
             {
@@ -32,6 +31,13 @@ namespace ListSamples
                 }
             }
             return found;
+        }
+
+        private static IDictionary<T, int> GetFrequencyOfElementLinQ<T>(ICollection<T> list)
+        {
+            Dictionary<T, int> found = new Dictionary<T, int>();
+            var dic = list.GroupBy(e => e).ToDictionary(g => g.Key, g => g.Count());
+            return dic;
         }
 
         static void Main(string[] args)
@@ -55,6 +61,13 @@ namespace ListSamples
             Console.WriteLine("\nЧастотный массив:");
             foreach (var el in GetFrequencyOfElement(genList))
                 Console.WriteLine(el);
+
+            // Для обобщенной коллекции с использованием LinQ;
+            Console.WriteLine("Для обобщенной коллекции с использованием LinQ:");
+            foreach(var el in GetFrequencyOfElementLinQ(genList))
+                Console.WriteLine(el);
+
+            Console.ReadLine();
         }
     }
 }
