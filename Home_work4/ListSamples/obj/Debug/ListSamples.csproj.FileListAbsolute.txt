@@ -5,3 +5,10 @@ D:\Учеба\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.csprojAssemblyRef
 D:\Учеба\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.csproj.CoreCompileInputs.cache
 D:\Учеба\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.exe
 D:\Учеба\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.pdb
+D:\Projects\CS2\Home_work4\ListSamples\bin\Debug\ListSamples.exe.config
+D:\Projects\CS2\Home_work4\ListSamples\bin\Debug\ListSamples.exe
+D:\Projects\CS2\Home_work4\ListSamples\bin\Debug\ListSamples.pdb
+D:\Projects\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.csprojAssemblyReference.cache
+D:\Projects\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.csproj.CoreCompileInputs.cache
+D:\Projects\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.exe
+D:\Projects\CS2\Home_work4\ListSamples\obj\Debug\ListSamples.pdb
