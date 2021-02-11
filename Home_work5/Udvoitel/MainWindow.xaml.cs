@@ -73,5 +73,11 @@ namespace Udvoitel
         {
             Application.Current.Shutdown();
         }
+
+        private void mnItemAbout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAbout windowAbout = new WindowAbout();
+            windowAbout.Show();
+        }
     }
 }

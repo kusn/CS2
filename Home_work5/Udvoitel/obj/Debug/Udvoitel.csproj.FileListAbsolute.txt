@@ -28,3 +28,5 @@ D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\Udvoitel.csproj.Gener
 D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\Udvoitel.csproj.CoreCompileInputs.cache
 D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\Udvoitel.exe
 D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\Udvoitel.pdb
+D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\WindowAbout.g.cs
+D:\Kudryashov\Учеба\CS2\Home_work5\Udvoitel\obj\Debug\WindowAbout.baml

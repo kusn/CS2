@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Udvoitel"
         mc:Ignorable="d"
-        Title="Udvoitel" Height="250" Width="200" Loaded="wndMain_Loaded">
-    <StackPanel>
+        Title="Udvoitel" Height="250" Width="274.386" Loaded="wndMain_Loaded">
+    <StackPanel Margin="0,0,0,1">
         <Menu>
             <MenuItem Header="File">
                 <MenuItem x:Name="mnItem" Header="New" Click="mnItem_Click"/>
                 <MenuItem x:Name="mnExit" Header="Exit" Click="mnExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mnItemAbout" Header="About" Click="mnItemAbout_Click">
+                
             </MenuItem>
         </Menu>
     <Grid>
