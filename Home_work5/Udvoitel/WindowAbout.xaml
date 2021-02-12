@@ -1,0 +1,21 @@
+﻿<Window x:Class="Udvoitel.WindowAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Udvoitel"
+        mc:Ignorable="d"
+        Title="WindowAbout" Height="450" Width="385.273">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="Pictures\About.jpg" x:Name="image" HorizontalAlignment="Left" Height="353" VerticalAlignment="Top" Width="145" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="1" Grid.RowSpan="2" Text="Кудряшов Сергей Николаевич! 19.05.1984 д.р. Познакомислся с программирование уже в далёкий 1995г. в школе. Изучал QBASIC на советских компьютерах Электроника. С 10-го класса изучал Turbo Pascal. В университете били Fortran, немного С и Matlab. С C# познакомился на работе. Необходимо было написать программу рассчета различных параметров. Всегда нравилось программирование, но дальше хобби и небольших программ не пошло." Width="220"  TextWrapping="Wrap" Margin="0,0,11,0" FontSize="14"/>
+    </Grid>
+</Window>
