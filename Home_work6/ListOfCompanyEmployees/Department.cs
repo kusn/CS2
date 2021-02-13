@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace ListOfCompanyEmployees
 {
-    class Department
+    class Department : INotifyPropertyChanged
     {
         string name;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string Name
         {
             get
             {
-                return name;
+                return this.name;
             }
             set
             {
-                value = name;
+                if (this.name != value)
+                {
+                    this.name = value;
+                    this.NotifyPropertyChanged("Name");
+                }
             }
         } 
 
@@ -29,6 +38,12 @@ namespace ListOfCompanyEmployees
         public override string ToString()
         {
             return Name;
+        }
+        
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
     }
 }
