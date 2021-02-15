@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace ListOfCompanyEmployees
 {
-    class Department : INotifyPropertyChanged
+    public class Department : INotifyPropertyChanged
     {
         string name;
 

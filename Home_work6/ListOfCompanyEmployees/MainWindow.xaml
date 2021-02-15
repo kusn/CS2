@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:ListOfCompanyEmployees"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:Employee x:Key="Employee" Name="Петя" LastName="Петров" Age="30" Salary="25000"/>
+    </Window.Resources>
     <Grid>
-        
+        <TextBlock Text="{Binding StringFormat=Зарплата составляет {0} рублей, Source={StaticResource Employee}, Path=Salary}" />
     </Grid>
 </Window>

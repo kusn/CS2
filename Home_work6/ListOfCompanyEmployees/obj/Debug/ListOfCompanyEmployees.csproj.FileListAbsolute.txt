@@ -1,0 +1,16 @@
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\bin\Debug\ListOfCompanyEmployees.exe.config
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\bin\Debug\ListOfCompanyEmployees.exe
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\bin\Debug\ListOfCompanyEmployees.pdb
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.csprojAssemblyReference.cache
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\MainWindow.g.cs
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\App.g.cs
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees_MarkupCompile.cache
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees_MarkupCompile.lref
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\MainWindow.baml
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.g.resources
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.Properties.Resources.resources
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.csproj.GenerateResource.cache
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.csproj.CoreCompileInputs.cache
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.exe
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.pdb
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\GeneratedInternalTypeHelper.g.cs

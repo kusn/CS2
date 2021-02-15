@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace ListOfCompanyEmployees
 {
-    class Employee : INotifyPropertyChanged
+    public class Employee : INotifyPropertyChanged
     {
         string name;
         string lastname;
@@ -82,6 +82,19 @@ namespace ListOfCompanyEmployees
             }
         }
 
+        public Employee()
+        {            
+        }
+
+        public Employee(string name, string lastName, int age, int salary)
+        {
+            Name = name;
+            LastName = lastName;
+            Age = age;
+            Salary = salary;
+            Department = new Department("");
+        }
+
         public Employee(string name, string lastName, int age, int salary, Department department)
         {
             Name = name;
@@ -89,6 +102,15 @@ namespace ListOfCompanyEmployees
             Age = age;
             Salary = salary;
             Department = department;
+        }
+
+        public Employee(string name, string lastName, int age, int salary, string department)
+        {
+            Name = name;
+            LastName = lastName;
+            Age = age;
+            Salary = salary;
+            Department = new Department(department);
         }
 
         public override string ToString()
