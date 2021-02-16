@@ -28,7 +28,12 @@ namespace ListOfCompanyEmployees
                     this.NotifyPropertyChanged("Name");
                 }
             }
-        } 
+        }
+
+        public Department()
+        {
+            Name = "";
+        }
 
         public Department(string name)
         {

@@ -34,6 +34,9 @@ namespace ListOfCompanyEmployees
     /// </summary>
     public partial class MainWindow : Window
     {
+        Employee employee = new Employee();
+        Department department = new Department();
+
         public MainWindow()
         {
             InitializeComponent();

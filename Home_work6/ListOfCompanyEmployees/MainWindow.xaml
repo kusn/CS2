@@ -9,7 +9,27 @@
     <Window.Resources>
         <local:Employee x:Key="Employee" Name="Петя" LastName="Петров" Age="30" Salary="25000"/>
     </Window.Resources>
-    <Grid>
+    <StackPanel HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="775">
+        <Menu>
+            <MenuItem Header="Menu" x:Name="mnItemMenu">
+                <MenuItem Header="Exit" x:Name="mnItemExit"/>
+            </MenuItem>
+            <MenuItem Header="User" x:Name="mnItemUser">
+                <MenuItem Header="Add" x:Name="mnItemAdd"/>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Path=employee.Name}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=employee.LastName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+
+
+
+
+    <!--<Grid>
         <TextBlock Text="{Binding StringFormat=Зарплата составляет {0} рублей, Source={StaticResource Employee}, Path=Salary}" />
-    </Grid>
+    </Grid>-->
 </Window>
