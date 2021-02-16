@@ -10,26 +10,29 @@
         <local:Employee x:Key="Employee" Name="Петя" LastName="Петров" Age="30" Salary="25000"/>
     </Window.Resources>
     <StackPanel HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="775">
+        <!--Определяем меню-->
         <Menu>
-            <MenuItem Header="Menu" x:Name="mnItemMenu">
-                <MenuItem Header="Exit" x:Name="mnItemExit"/>
+            <MenuItem Header="Меню" x:Name="mnItemMenu">
+                <MenuItem Header="Выход" x:Name="mnItemExit"/>
             </MenuItem>
-            <MenuItem Header="User" x:Name="mnItemUser">
-                <MenuItem Header="Add" x:Name="mnItemAdd"/>
+            <MenuItem Header="Работник" x:Name="mnItemUser">
+                <MenuItem Header="Добавить" x:Name="mnItemAdd"/>
+                <MenuItem Header="Редактировать" x:Name="mnItemUserEdit" Click="mnItemUserEdit_Click"/>                
+            </MenuItem>
+            <MenuItem Header="Служба" x:Name="mnItemDepartment">
+                <MenuItem Header="Добавить"/>
+                <MenuItem Header="Редактировать" Click="mnItemDepartmentEdit_Click"/>
             </MenuItem>
         </Menu>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True">
+        <!--Определяем таблицу-->
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Path=employee.Name}"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=employee.LastName}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="*"/>
+                <DataGridTextColumn Header="Зарплата" Binding="{Binding Salary}" Width="*"/>
+                <DataGridTextColumn Header="Служба" Binding="{Binding Department}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
-
-
-
-
-    <!--<Grid>
-        <TextBlock Text="{Binding StringFormat=Зарплата составляет {0} рублей, Source={StaticResource Employee}, Path=Salary}" />
-    </Grid>-->
 </Window>

@@ -26,6 +26,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace ListOfCompanyEmployees
 {
@@ -34,12 +35,27 @@ namespace ListOfCompanyEmployees
     /// </summary>
     public partial class MainWindow : Window
     {
-        Employee employee = new Employee();
-        Department department = new Department();
+        //Employee employee = new Employee();
+        Department department = new Department("Главного конструктора");
+        ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
 
         public MainWindow()
         {
             InitializeComponent();
+            employees.Add(new Employee("Петр", "Петров", 23, 23000, department));
+            dataGrid.ItemsSource = employees;
+        }
+
+        private void mnItemUserEdit_Click(object sender, RoutedEventArgs e)
+        {
+            WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee();
+            wndEditOfEmployee.Show();
+        }
+
+        private void mnItemDepartmentEdit_Click(object sender, RoutedEventArgs e)
+        {
+            WindowEditOfDepartment wndEditOfDepartment = new WindowEditOfDepartment();
+            wndEditOfDepartment.Show();
         }
     }
 

@@ -1,0 +1,38 @@
+﻿<Window x:Class="ListOfCompanyEmployees.WindowEditOfEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListOfCompanyEmployees"
+        mc:Ignorable="d"
+        Title="WindowEditOfEmployee" Height="255" Width="333.792">
+    <Grid Margin="0,0,508,0">
+        <GroupBox x:Name="groupBox" Header="Работник" HorizontalAlignment="Left" Height="188" Margin="6,3,-322,0" VerticalAlignment="Top" Width="316">
+            <Grid HorizontalAlignment="Left" Height="150" Margin="10,12,-315,0" VerticalAlignment="Top" Width="305">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="tbName" Margin="0" TextWrapping="Wrap" Text="Имя" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="0"/>
+                <TextBlock x:Name="tbLastName" Margin="29,4,29,3" TextWrapping="Wrap" Text="Фамилия" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="1"/>
+                <TextBlock x:Name="tbAge" Margin="29,4,29,3" TextWrapping="Wrap" Text="Возраст" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="2"/>
+                <TextBlock x:Name="tbSalary" Margin="29,4,29,3" TextWrapping="Wrap" Text="Зарплата" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="3"/>
+                <TextBlock x:Name="tbDepartment" Margin="29,4,29,3" TextWrapping="Wrap" Text="Служба" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="4"/>
+                <TextBox x:Name="tbxName" Margin="10,3,10,4" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="0" Grid.Column="1"/>
+                <TextBox x:Name="tbxLastName" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="1" Grid.Column="1"/>
+                <TextBox x:Name="tbxAge" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="2" Grid.Column="1"/>
+                <TextBox x:Name="tbxSalary" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="3" Grid.Column="1"/>
+                <TextBox x:Name="tbxDepartment" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="4" Grid.Column="1"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="211,196,-306,0" VerticalAlignment="Top" Width="95" Click="btnAdd_Click"/>
+
+    </Grid>
+</Window>
