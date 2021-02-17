@@ -36,26 +36,33 @@ namespace ListOfCompanyEmployees
     public partial class MainWindow : Window
     {
         //Employee employee = new Employee();
-        Department department = new Department("Главного конструктора");
-        ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+        Department CurrentDepartment { get; set; }
+        public ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+        public ObservableCollection<Department> departments = new ObservableCollection<Department>();
 
         public MainWindow()
         {
             InitializeComponent();
-            employees.Add(new Employee("Петр", "Петров", 23, 23000, department));
+            departments.Add(new Department("Главного конструктора"));
+            employees.Add(new Employee("Петр", "Петров", 23, 23000, departments[0]));            
             dataGrid.ItemsSource = employees;
         }
 
         private void mnItemUserEdit_Click(object sender, RoutedEventArgs e)
         {
             WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee();
-            wndEditOfEmployee.Show();
+            wndEditOfEmployee.ShowDialog();
+            wndEditOfEmployee.cbDepartment.ItemsSource = departments;
+            if (wndEditOfEmployee.DialogResult.HasValue && wndEditOfEmployee.DialogResult.Value)
+                employees.Add(wndEditOfEmployee.EditEmployee);
         }
 
         private void mnItemDepartmentEdit_Click(object sender, RoutedEventArgs e)
         {
             WindowEditOfDepartment wndEditOfDepartment = new WindowEditOfDepartment();
-            wndEditOfDepartment.Show();
+            wndEditOfDepartment.ShowDialog();
+            if (wndEditOfDepartment.DialogResult.HasValue && wndEditOfDepartment.DialogResult.Value && (!departments.Contains(wndEditOfDepartment.NewNameOfDepartment)))
+                departments.Add(wndEditOfDepartment.NewNameOfDepartment);
         }
     }
 

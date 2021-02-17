@@ -19,14 +19,35 @@ namespace ListOfCompanyEmployees
     /// </summary>
     public partial class WindowEditOfEmployee : Window
     {
+        public string NameOfEmployee { get; set; }
+        public string LastNameOfEmployee { get; set; }
+        public int AgeOfEmployee { get; set; }
+        public int SalaryOfEmployee { get; set; }
+        public Department DepartmentOfEmployee { get; set; }
+
+        public Employee EditEmployee { get; set; }
+
         public WindowEditOfEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            /*NameOfEmployee = tbxName.Text;
+            LastNameOfEmployee = tbxLastName.Text;
+            AgeOfEmployee = Convert.ToInt32(tbxAge.Text);
+            SalaryOfEmployee = Convert.ToInt32(tbxSalary.Text);
+            DepartmentOfEmployee = new Department(cbDepartment.Text);*/
+            EditEmployee = new Employee(tbxName.Text, tbxLastName.Text, Convert.ToInt32(tbxAge.Text), Convert.ToInt32(tbxSalary.Text), new Department(cbDepartment.Text));
+            this.DialogResult = true;
+            this.Close();
+        }
 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

@@ -19,14 +19,24 @@ namespace ListOfCompanyEmployees
     /// </summary>
     public partial class WindowEditOfDepartment : Window
     {
+        public Department NewNameOfDepartment { get; set; }
+
         public WindowEditOfDepartment()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnOk_Click(object sender, RoutedEventArgs e)
         {
+            NewNameOfDepartment = new Department(tbxName.Text);
+            this.DialogResult = true;
+            this.Close();
+        }
 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

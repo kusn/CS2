@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="WindowEditOfDepartment" Height="323.766" Width="299.74">
     <Grid>
-        <GroupBox x:Name="groupBox" Header="Служба" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="272"/>
-
-        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="199,257,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <GroupBox x:Name="groupBox" Header="Служба" HorizontalAlignment="Left" Height="236" Margin="10,10,0,0" VerticalAlignment="Top" Width="272"/>        
         <Grid HorizontalAlignment="Left" Height="207" Margin="20,28,0,0" VerticalAlignment="Top" Width="254">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Name="tbName" Margin="0" TextWrapping="Wrap" Text="Служба" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="0"/>
             <TextBox x:Name="tbxName" Margin="10,3,10,4" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="0" Grid.Column="1"/>
         </Grid>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="10,263,0,0" VerticalAlignment="Top" Width="75" Click="btnOk_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,263,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
 
     </Grid>
 </Window>
