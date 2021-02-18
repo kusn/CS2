@@ -37,3 +37,4 @@ D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfC
 D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.csproj.CoreCompileInputs.cache
 D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.exe
 D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.pdb
+D:\Kudryashov\Учеба\CS2\Home_work6\ListOfCompanyEmployees\obj\Debug\ListOfCompanyEmployees.csprojAssemblyReference.cache

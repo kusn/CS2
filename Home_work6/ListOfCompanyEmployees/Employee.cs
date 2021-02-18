@@ -15,6 +15,8 @@ namespace ListOfCompanyEmployees
         int age;
         int salary;
         Department department;
+        DateTime startOfVacation;
+        DateTime endOfVacation;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -85,6 +87,32 @@ namespace ListOfCompanyEmployees
             }
         }
 
+        public DateTime StartOfVacation
+        {
+            get { return this.startOfVacation; }
+            set
+            {
+                if (this.startOfVacation != value)
+                {
+                    this.startOfVacation = value;
+                    this.NotifyPropertyChanged("StartOfVacation");
+                }
+            }
+        }
+
+        public DateTime EndOfVacation
+        {
+            get { return this.endOfVacation; }
+            set
+            {
+                if (this.endOfVacation != value)
+                {
+                    this.endOfVacation = value;
+                    this.NotifyPropertyChanged("EndOfVacation");
+                }
+            }
+        }
+
         public Employee()
         {
         }
@@ -96,6 +124,8 @@ namespace ListOfCompanyEmployees
             Age = age;
             Salary = salary;
             Department = new Department("");
+            StartOfVacation = DateTime.Now;
+            EndOfVacation = DateTime.Now;
         }
 
         public Employee(string name, string lastName, int age, int salary, Department department)
@@ -105,6 +135,8 @@ namespace ListOfCompanyEmployees
             Age = age;
             Salary = salary;
             Department = department;
+            StartOfVacation = DateTime.Now;
+            EndOfVacation = DateTime.Now;
         }
 
         public Employee(string name, string lastName, int age, int salary, string department)
@@ -114,6 +146,19 @@ namespace ListOfCompanyEmployees
             Age = age;
             Salary = salary;
             Department = new Department(department);
+            StartOfVacation = DateTime.Now;
+            EndOfVacation = DateTime.Now;
+        }
+
+        public Employee(string name, string lastName, int age, int salary, Department department, DateTime start, DateTime end)
+        {
+            Name = name;
+            LastName = lastName;
+            Age = age;
+            Salary = salary;
+            Department = department;
+            StartOfVacation = start;
+            EndOfVacation = end;
         }
 
         public override string ToString()

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCompanyEmployees"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="831.672">
     <Window.Resources>
         <local:Employee x:Key="Employee" Name="Петя" LastName="Петров" Age="30" Salary="25000"/>
     </Window.Resources>
-    <StackPanel HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="775">
+    <StackPanel HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="800">
         <!--Определяем меню-->
         <Menu>
             <MenuItem Header="Меню" x:Name="mnItemMenu">
@@ -32,6 +32,8 @@
                 <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="*"/>
                 <DataGridTextColumn Header="Зарплата" Binding="{Binding Salary}" Width="*"/>
                 <DataGridTextColumn Header="Служба" Binding="{Binding Department}" Width="*"/>
+                <DataGridTextColumn Header="Начало отпуска" Binding="{Binding StartOfVacation}" Width="*"/>
+                <DataGridTextColumn Header="Конец отпуска" Binding="{Binding EndOfVacation}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

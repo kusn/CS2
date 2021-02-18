@@ -35,6 +35,8 @@ namespace ListOfCompanyEmployees
                     tbxAge.Text = employee.Age.ToString();
                     tbxSalary.Text = employee.Salary.ToString();
                     cbDepartment.Text = employee.Department.ToString();
+                    datePStart.DisplayDate = employee.StartOfVacation;
+                    datePEnd.DisplayDate = employee.EndOfVacation;
                 }
                 catch
                 {
@@ -56,6 +58,8 @@ namespace ListOfCompanyEmployees
             EditEmployee.Age = Convert.ToInt32(tbxAge.Text);
             EditEmployee.Salary = Convert.ToInt32(tbxSalary.Text);
             EditEmployee.Department = new Department(cbDepartment.Text);
+            EditEmployee.StartOfVacation = datePStart.SelectedDate.Value;
+            EditEmployee.EndOfVacation = datePEnd.SelectedDate.Value;
             this.DialogResult = true;            
             this.Close();
         }
