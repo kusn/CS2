@@ -16,16 +16,16 @@
                 <MenuItem Header="Выход" x:Name="mnItemExit"/>
             </MenuItem>
             <MenuItem Header="Работник" x:Name="mnItemUser">
-                <MenuItem Header="Добавить" x:Name="mnItemAdd"/>
+                <MenuItem Header="Добавить" x:Name="mnItemAdd" Click="mnItemUserAdd_Click"/>
                 <MenuItem Header="Редактировать" x:Name="mnItemUserEdit" Click="mnItemUserEdit_Click"/>                
             </MenuItem>
             <MenuItem Header="Служба" x:Name="mnItemDepartment">
-                <MenuItem Header="Добавить"/>
+                <MenuItem Header="Добавить" Click="mnItemDepartmentAdd_Click"/>
                 <MenuItem Header="Редактировать" Click="mnItemDepartmentEdit_Click"/>
             </MenuItem>
         </Menu>
         <!--Определяем таблицу-->
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgOfEmployee" ItemsSource="{Binding}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"/>

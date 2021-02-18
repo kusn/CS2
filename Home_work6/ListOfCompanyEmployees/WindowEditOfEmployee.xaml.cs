@@ -18,29 +18,45 @@ namespace ListOfCompanyEmployees
     /// Логика взаимодействия для WindowEditOfEmployee.xaml
     /// </summary>
     public partial class WindowEditOfEmployee : Window
-    {
-        public string NameOfEmployee { get; set; }
-        public string LastNameOfEmployee { get; set; }
-        public int AgeOfEmployee { get; set; }
-        public int SalaryOfEmployee { get; set; }
-        public Department DepartmentOfEmployee { get; set; }
+    {        
+        public Employee EditEmployee { get; private set; } = new Employee();
 
-        public Employee EditEmployee { get; set; }
-
-        public WindowEditOfEmployee()
+        public WindowEditOfEmployee(Employee employee, bool edit)
         {
+            MainWindow mainWindow = new MainWindow();
             InitializeComponent();
+            cbDepartment.ItemsSource = mainWindow.ListOfDepartments;
+            if (edit)
+            {                
+                try
+                {
+                    tbxName.Text = employee.Name;
+                    tbxLastName.Text = employee.LastName;
+                    tbxAge.Text = employee.Age.ToString();
+                    tbxSalary.Text = employee.Salary.ToString();
+                    cbDepartment.Text = employee.Department.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Выберите работника");
+                    this.Close();
+                }
+            }
+            /*else if(!edit)
+            {
+                
+            }*/
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            /*NameOfEmployee = tbxName.Text;
-            LastNameOfEmployee = tbxLastName.Text;
-            AgeOfEmployee = Convert.ToInt32(tbxAge.Text);
-            SalaryOfEmployee = Convert.ToInt32(tbxSalary.Text);
-            DepartmentOfEmployee = new Department(cbDepartment.Text);*/
-            EditEmployee = new Employee(tbxName.Text, tbxLastName.Text, Convert.ToInt32(tbxAge.Text), Convert.ToInt32(tbxSalary.Text), new Department(cbDepartment.Text));
-            this.DialogResult = true;
+            
+            EditEmployee.Name = tbxName.Text;
+            EditEmployee.LastName = tbxLastName.Text;
+            EditEmployee.Age = Convert.ToInt32(tbxAge.Text);
+            EditEmployee.Salary = Convert.ToInt32(tbxSalary.Text);
+            EditEmployee.Department = new Department(cbDepartment.Text);
+            this.DialogResult = true;            
             this.Close();
         }
 

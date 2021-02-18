@@ -35,38 +35,75 @@ namespace ListOfCompanyEmployees
     /// </summary>
     public partial class MainWindow : Window
     {
-        //Employee employee = new Employee();
-        Department CurrentDepartment { get; set; }
-        public ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
-        public ObservableCollection<Department> departments = new ObservableCollection<Department>();
+        public ObservableCollection<Employee> ListOfEmployees { get; set; } = new ObservableCollection<Employee>();
+        public ObservableCollection<Department> ListOfDepartments { get; set; } = new ObservableCollection<Department>();
 
         public MainWindow()
         {
             InitializeComponent();
-            departments.Add(new Department("Главного конструктора"));
-            employees.Add(new Employee("Петр", "Петров", 23, 23000, departments[0]));            
-            dataGrid.ItemsSource = employees;
+            ListOfDepartments.Add(new Department("Главного конструктора"));
+            ListOfEmployees.Add(new Employee("Петр", "Петров", 23, 23000, ListOfDepartments[0]));
+            dgOfEmployee.ItemsSource = ListOfEmployees;
         }
 
         private void mnItemUserEdit_Click(object sender, RoutedEventArgs e)
         {
-            WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee();
-            wndEditOfEmployee.ShowDialog();
-            wndEditOfEmployee.cbDepartment.ItemsSource = departments;
+            bool edit = true;
+            Employee emp = new Employee();
+            emp = (Employee)dgOfEmployee.SelectedItem;
+            int index = ListOfEmployees.IndexOf(emp);
+            WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee(emp, edit);
+            wndEditOfEmployee.cbDepartment.ItemsSource = ListOfDepartments;
+            wndEditOfEmployee.ShowDialog();            
             if (wndEditOfEmployee.DialogResult.HasValue && wndEditOfEmployee.DialogResult.Value)
-                employees.Add(wndEditOfEmployee.EditEmployee);
+            {
+                ListOfEmployees[index] = wndEditOfEmployee.EditEmployee;
+            }
         }
 
         private void mnItemDepartmentEdit_Click(object sender, RoutedEventArgs e)
         {
-            WindowEditOfDepartment wndEditOfDepartment = new WindowEditOfDepartment();
+            bool edit = true;
+            Employee emp = new Employee();
+            emp = (Employee)dgOfEmployee.SelectedItem;
+            int index = ListOfDepartments.IndexOf(emp.Department);
+            WindowEditOfDepartment wndEditOfDepartment = new WindowEditOfDepartment(emp, edit);
             wndEditOfDepartment.ShowDialog();
-            if (wndEditOfDepartment.DialogResult.HasValue && wndEditOfDepartment.DialogResult.Value && (!departments.Contains(wndEditOfDepartment.NewNameOfDepartment)))
-                departments.Add(wndEditOfDepartment.NewNameOfDepartment);
+            if(wndEditOfDepartment.DialogResult.HasValue && wndEditOfDepartment.DialogResult.Value)
+            {
+                ListOfDepartments[index] = wndEditOfDepartment.NewNameOfDepartment;
+                ListOfEmployees[emp.ID].Department = wndEditOfDepartment.NewNameOfDepartment;
+            }
+        }
+
+        private void mnItemDepartmentAdd_Click(object sender, RoutedEventArgs e)
+        {
+            bool edit = false;
+            Employee emp = new Employee();
+            WindowEditOfDepartment wndEditOfDepartment = new WindowEditOfDepartment(emp, edit);
+            wndEditOfDepartment.ShowDialog();
+            if (wndEditOfDepartment.DialogResult.HasValue && wndEditOfDepartment.DialogResult.Value)
+            {
+                ListOfDepartments.Add(wndEditOfDepartment.NewNameOfDepartment);                
+            }
+        }
+
+        private void mnItemUserAdd_Click(object sender, RoutedEventArgs e)
+        {
+            bool edit = false;
+            Employee emp = new Employee();
+            emp = (Employee)dgOfEmployee.SelectedItem;
+            WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee(emp, edit);
+            wndEditOfEmployee.cbDepartment.ItemsSource = ListOfDepartments;
+            wndEditOfEmployee.ShowDialog();
+            if (wndEditOfEmployee.DialogResult.HasValue && wndEditOfEmployee.DialogResult.Value)
+            {
+                ListOfEmployees.Add(wndEditOfEmployee.EditEmployee);
+            }
         }
     }
 
-    public class StringToDepartmentConverter : IValueConverter
+    /*public class StringToDepartmentConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -77,5 +114,5 @@ namespace ListOfCompanyEmployees
         {
             return value.ToString();
         }
-    }
+    }*/
 }

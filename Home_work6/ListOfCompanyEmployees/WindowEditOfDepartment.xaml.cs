@@ -21,14 +21,27 @@ namespace ListOfCompanyEmployees
     {
         public Department NewNameOfDepartment { get; set; }
 
-        public WindowEditOfDepartment()
+        public WindowEditOfDepartment(Employee employee, bool edit)
         {
+            MainWindow mainWindow = new MainWindow();
             InitializeComponent();
+            if (edit)
+            {
+                try
+                {
+                    tbxName.Text = employee.Department.Name;
+                }
+                catch
+                {
+                    MessageBox.Show("Выберите работника");
+                    this.Close();
+                }
+            }
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-            NewNameOfDepartment = new Department(tbxName.Text);
+            NewNameOfDepartment = new Department(tbxName.Text);            
             this.DialogResult = true;
             this.Close();
         }

@@ -9,6 +9,7 @@ namespace ListOfCompanyEmployees
 {
     public class Employee : INotifyPropertyChanged
     {
+        static int Count = 0;
         string name;
         string lastname;
         int age;
@@ -16,6 +17,8 @@ namespace ListOfCompanyEmployees
         Department department;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public int ID { get; private set; }
 
         public string Name
         {
@@ -83,7 +86,7 @@ namespace ListOfCompanyEmployees
         }
 
         public Employee()
-        {            
+        {
         }
 
         public Employee(string name, string lastName, int age, int salary)
