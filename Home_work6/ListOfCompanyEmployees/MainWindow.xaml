@@ -1,0 +1,40 @@
+﻿<Window x:Class="ListOfCompanyEmployees.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListOfCompanyEmployees"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="831.672">
+    <Window.Resources>
+        <local:Employee x:Key="Employee" Name="Петя" LastName="Петров" Age="30" Salary="25000"/>
+    </Window.Resources>
+    <StackPanel HorizontalAlignment="Left" Height="406" Margin="10,10,0,0" VerticalAlignment="Top" Width="800">
+        <!--Определяем меню-->
+        <Menu>
+            <MenuItem Header="Меню" x:Name="mnItemMenu">
+                <MenuItem Header="Выход" x:Name="mnItemExit"/>
+            </MenuItem>
+            <MenuItem Header="Работник" x:Name="mnItemUser">
+                <MenuItem Header="Добавить" x:Name="mnItemAdd" Click="mnItemUserAdd_Click"/>
+                <MenuItem Header="Редактировать" x:Name="mnItemUserEdit" Click="mnItemUserEdit_Click"/>                
+            </MenuItem>
+            <MenuItem Header="Служба" x:Name="mnItemDepartment">
+                <MenuItem Header="Добавить" Click="mnItemDepartmentAdd_Click"/>
+                <MenuItem Header="Редактировать" Click="mnItemDepartmentEdit_Click"/>
+            </MenuItem>
+        </Menu>
+        <!--Определяем таблицу-->
+        <DataGrid x:Name="dgOfEmployee" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" Width="*"/>
+                <DataGridTextColumn Header="Зарплата" Binding="{Binding Salary}" Width="*"/>
+                <DataGridTextColumn Header="Служба" Binding="{Binding Department}" Width="*"/>
+                <DataGridTextColumn Header="Начало отпуска" Binding="{Binding StartOfVacation}" Width="*"/>
+                <DataGridTextColumn Header="Конец отпуска" Binding="{Binding EndOfVacation}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
