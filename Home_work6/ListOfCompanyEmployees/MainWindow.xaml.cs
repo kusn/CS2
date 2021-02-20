@@ -37,6 +37,9 @@ namespace ListOfCompanyEmployees
     {
         public ObservableCollection<Employee> ListOfEmployees { get; set; } = new ObservableCollection<Employee>();
         public ObservableCollection<Department> ListOfDepartments { get; set; } = new ObservableCollection<Department>();
+        public string StartOfVac { get; set; }
+        public string EndOfVac { get; set; }
+
 
         public MainWindow()
         {
@@ -54,6 +57,11 @@ namespace ListOfCompanyEmployees
             int index = ListOfEmployees.IndexOf(emp);
             WindowEditOfEmployee wndEditOfEmployee = new WindowEditOfEmployee(emp, edit);
             wndEditOfEmployee.cbDepartment.ItemsSource = ListOfDepartments;
+            wndEditOfEmployee.cbDepartment.Text = emp.Department.Name;
+            StartOfVac = emp.StartOfVacation.ToString();
+            EndOfVac = emp.EndOfVacation.ToString();
+            wndEditOfEmployee.datePStart.Text = StartOfVac;
+            wndEditOfEmployee.datePEnd.Text = EndOfVac;
             wndEditOfEmployee.ShowDialog();            
             if (wndEditOfEmployee.DialogResult.HasValue && wndEditOfEmployee.DialogResult.Value)
             {

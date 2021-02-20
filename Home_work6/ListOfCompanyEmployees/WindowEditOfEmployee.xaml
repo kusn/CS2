@@ -27,7 +27,7 @@
                 <TextBlock x:Name="tbAge" Margin="0" TextWrapping="Wrap" Text="Возраст" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="2"/>
                 <TextBlock x:Name="tbSalary" Margin="0" TextWrapping="Wrap" Text="Зарплата" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="3"/>
                 <TextBlock x:Name="tbDepartment" Margin="0" TextWrapping="Wrap" Text="Служба" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="4"/>
-                <TextBlock x:Name="tbStart" Margin="0" TextWrapping="Wrap" Text="Начало отпуска" Height="23" Width="95" FontSize="12" TextAlignment="Center" Grid.Row="5"/>
+                <TextBlock x:Name="tbStart" Margin="0,5,10,4" TextWrapping="Wrap" Text="Начало отпуска" Height="23" FontSize="14" TextAlignment="Center" Grid.Row="5"/>
                 <TextBlock x:Name="tbEnd" Margin="0" TextWrapping="Wrap" Text="Конец отпуска" Height="23" Width="95" FontSize="14" TextAlignment="Center" Grid.Row="6"/>
                 <TextBox x:Name="tbxName" Margin="10,3,10,4" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="0" Grid.Column="1"/>
                 <TextBox x:Name="tbxLastName" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="1" Grid.Column="1"/>
@@ -35,7 +35,7 @@
                 <TextBox x:Name="tbxSalary" Margin="10,4,10,3" TextWrapping="Wrap" Height="23" FontSize="14" TextAlignment="Left" Grid.Row="3" Grid.Column="1"/>
                 <ComboBox x:Name="cbDepartment" Margin="10,4,10,3" Height="23" FontSize="14" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Path= ListOfDepartments}"/>
                 <DatePicker x:Name="datePStart" HorizontalAlignment="Left" Height="24" Margin="10,4,10,3" VerticalAlignment="Top" Width="155" Grid.Row="5" Grid.Column="1"/>
-                <DatePicker x:Name="datePEnd" HorizontalAlignment="Left" Height="24" Margin="10,4,10,3" VerticalAlignment="Top" Width="155" Grid.Row="6" Grid.Column="1"/>                
+                <DatePicker x:Name="datePEnd" HorizontalAlignment="Left" Height="24" Margin="10,4,10,3" VerticalAlignment="Top" Width="155" Grid.Row="6" Grid.Column="1"/>
             </Grid>
         </GroupBox>
         <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="6,279,-101,0" VerticalAlignment="Top" Width="95" Click="btnOK_Click"/>
