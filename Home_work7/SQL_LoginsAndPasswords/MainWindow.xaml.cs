@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Кудряшов Сергей
+
+//Создать БД "Логин-Пароль"
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
