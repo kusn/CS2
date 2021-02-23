@@ -22,7 +22,9 @@ namespace SQL_LoginsAndPasswords
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog = LoginsAndPasswords; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog = LoginsAndPasswords; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFileName=D:\Projects\CS2\Home_work7\SQL_LoginsAndPasswords\bin\Debug\LoginsAndPasswords.mdf; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public MainWindow()
         {
@@ -51,7 +53,7 @@ namespace SQL_LoginsAndPasswords
         {
             connection = new SqlConnection(connectionString);
             adapter = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT Id, Login, Password", connection);
+            SqlCommand command = new SqlCommand("SELECT Id, Login, Password FROM LgnsAndPsswds", connection);
             adapter.SelectCommand = command;
             dt = new DataTable();
             adapter.Fill(dt);
