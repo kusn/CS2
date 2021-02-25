@@ -17,6 +17,9 @@ public interface IService
 	[OperationContract]
 	CompositeType GetDataUsingDataContract(CompositeType composite);
 
+	[OperationContract]
+	int calculateDays(int day, int month, int year);
+
 	// TODO: Добавьте здесь операции служб
 }
 

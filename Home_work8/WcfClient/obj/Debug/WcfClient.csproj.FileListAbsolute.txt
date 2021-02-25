@@ -1,0 +1,15 @@
+D:\Projects\CS2\Home_work8\WcfClient\bin\Debug\WcfClient.exe.config
+D:\Projects\CS2\Home_work8\WcfClient\bin\Debug\WcfClient.exe
+D:\Projects\CS2\Home_work8\WcfClient\bin\Debug\WcfClient.pdb
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.csprojAssemblyReference.cache
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\MainWindow.g.cs
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\App.g.cs
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient_MarkupCompile.cache
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient_MarkupCompile.lref
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\MainWindow.baml
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.g.resources
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.Properties.Resources.resources
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.csproj.GenerateResource.cache
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.csproj.CoreCompileInputs.cache
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.exe
+D:\Projects\CS2\Home_work8\WcfClient\obj\Debug\WcfClient.pdb

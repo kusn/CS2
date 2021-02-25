@@ -9,7 +9,14 @@ using System.Text;
 // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Реструктуризация" можно использовать для одновременного изменения имени класса "Service" в коде, SVC-файле и файле конфигурации.
 public class Service : IService
 {
-	public string GetData(int value)
+    public int calculateDays(int day, int Month, int year)
+    {
+		DateTime dt = new DateTime(year, Month, day);
+		int datetodays = DateTime.Now.Subtract(dt).Days;
+		return datetodays;
+    }
+
+    public string GetData(int value)
 	{
 		return string.Format("You entered: {0}", value);
 	}
