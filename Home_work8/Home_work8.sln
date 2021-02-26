@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService", "WCFService\", "{09C271A2-3490-4F66-8F1B-9A23FC751DA5}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.2"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_64516"
 		Debug.AspNetCompiler.PhysicalPath = "WCFService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64516\"
@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfClient", "WcfClient\WcfC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIService", "WebAPIService\WebAPIService.csproj", "{A9F85ED9-AB17-4D2D-AA00-205F996F1CF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClient", "WebApiClient\WebApiClient.csproj", "{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{A9F85ED9-AB17-4D2D-AA00-205F996F1CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9F85ED9-AB17-4D2D-AA00-205F996F1CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9F85ED9-AB17-4D2D-AA00-205F996F1CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
