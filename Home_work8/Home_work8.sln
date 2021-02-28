@@ -56,6 +56,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TicTacToeWCFService", "TicT
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeWCFClient", "TicTacToeWCFClient\TicTacToeWCFClient.csproj", "{1C4FF831-1C89-4FEC-AE4A-63E510E9A060}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1535F30-CFF4-489E-825F-AD44CCC6B215} = {F1535F30-CFF4-489E-825F-AD44CCC6B215}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +87,10 @@ Global
 		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1C4FF831-1C89-4FEC-AE4A-63E510E9A060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4FF831-1C89-4FEC-AE4A-63E510E9A060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4FF831-1C89-4FEC-AE4A-63E510E9A060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4FF831-1C89-4FEC-AE4A-63E510E9A060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

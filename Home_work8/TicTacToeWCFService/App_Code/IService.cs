@@ -17,6 +17,15 @@ public interface IService
 	[OperationContract]
 	CompositeType GetDataUsingDataContract(CompositeType composite);
 
+	[OperationContract]
+	int GetValue(int i, int j);
+
+	[OperationContract]
+	void SetValue(int i);
+
+	[OperationContract]
+	int GetId();
+
 	// TODO: Добавьте здесь операции служб
 }
 
@@ -39,5 +48,26 @@ public class CompositeType
 	{
 		get { return stringValue; }
 		set { stringValue = value; }
+	}
+}
+
+[DataContract]
+public class TicTacToeType
+{
+	int id;
+	int[,] matrix = new int[,] { { -1, -1, -1 }, { -1, -1, -1 }, { -1, -1, -1 } };
+
+	[DataMember]
+	public int Id
+    {
+		get { return id; }
+		set { id = value; }
+    }
+
+	[DataMember]
+	public int[,] Matrix
+	{ 
+		get { return matrix; }
+        set { matrix = value; }
 	}
 }

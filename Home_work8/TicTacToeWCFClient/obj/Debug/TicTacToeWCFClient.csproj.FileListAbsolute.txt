@@ -1,0 +1,15 @@
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\bin\Debug\TicTacToeWCFClient.exe.config
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\bin\Debug\TicTacToeWCFClient.exe
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\bin\Debug\TicTacToeWCFClient.pdb
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.csprojAssemblyReference.cache
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\MainWindow.g.cs
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\App.g.cs
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient_MarkupCompile.cache
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient_MarkupCompile.lref
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\MainWindow.baml
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.g.resources
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.Properties.Resources.resources
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.csproj.GenerateResource.cache
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.csproj.CoreCompileInputs.cache
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.exe
+D:\Учеба\CS2\Home_work8\TicTacToeWCFClient\obj\Debug\TicTacToeWCFClient.pdb
