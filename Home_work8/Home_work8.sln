@@ -34,6 +34,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIService", "WebAPIServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiClient", "WebApiClient\WebApiClient.csproj", "{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TicTacToeWCFService", "TicTacToeWCFService\", "{F1535F30-CFF4-489E-825F-AD44CCC6B215}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55800"
+		Debug.AspNetCompiler.PhysicalPath = "TicTacToeWCFService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55800\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55800"
+		Release.AspNetCompiler.PhysicalPath = "TicTacToeWCFService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55800\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55800"
+		SlnRelativePath = "TicTacToeWCFService\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +78,10 @@ Global
 		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DEB7AC3-9433-4604-9E35-CF53FD9D0831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1535F30-CFF4-489E-825F-AD44CCC6B215}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
